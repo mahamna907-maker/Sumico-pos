@@ -108,5 +108,8 @@ app.get('/api/summary', (req, res) => {
   res.json({ totalSales, cash, card, totalExpense });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log('Sumico POS server running on port ' + PORT));
+// ---- SERVER SETUP FOR RAILWAY ----
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('Sumico POS server running on port ' + PORT);
+});
